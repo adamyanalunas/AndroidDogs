@@ -14,8 +14,8 @@ public class ZoomedDog extends Activity {
     public static final String IMAGE_BUNDLE_ID = "IMAGE_BUNDLE_ID";
     public static final String NAME_BUNDLE_ID = "NAME_BUNDLE_ID ";
 
-    private ImageView dogImageView;
-    private TextView dogNameText;
+    private ImageView mDogImageView;
+    private TextView mDogNameText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,20 +23,20 @@ public class ZoomedDog extends Activity {
         setContentView(R.layout.dog_image_view);
         Bundle extras = getIntent().getExtras();
 
-        dogImageView = (ImageView) findViewById(R.id.dog_image_view);
+        mDogImageView = (ImageView) findViewById(R.id.dog_image_view);
         Bitmap bitmap = extras.getParcelable(IMAGE_BUNDLE_ID);
-        dogImageView.setImageBitmap(bitmap);
+        mDogImageView.setImageBitmap(bitmap);
 
-        dogNameText = (TextView) findViewById(R.id.dog_image_text);
+        mDogNameText = (TextView) findViewById(R.id.dog_image_text);
         String name = extras.getString(NAME_BUNDLE_ID);
-        dogNameText.setText(name);
+        mDogNameText.setText(name);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
-        dogNameText = null;
-        dogImageView = null;
+        mDogNameText = null;
+        mDogImageView = null;
     }
 }
