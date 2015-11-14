@@ -2,7 +2,9 @@ package com.example.adam.griddemo;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,8 +26,8 @@ public class ZoomedDog extends Activity {
         Bundle extras = getIntent().getExtras();
 
         mDogImageView = (ImageView) findViewById(R.id.dog_image_view);
-        Bitmap bitmap = extras.getParcelable(IMAGE_BUNDLE_ID);
-        mDogImageView.setImageBitmap(bitmap);
+        int imageID = extras.getInt(IMAGE_BUNDLE_ID);
+        mDogImageView.setImageResource(imageID);
 
         mDogNameText = (TextView) findViewById(R.id.dog_image_text);
         String name = extras.getString(NAME_BUNDLE_ID);
