@@ -8,6 +8,8 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 /**
  * Created by adam on 11/9/15.
  */
@@ -27,7 +29,10 @@ public class ZoomedDog extends Activity {
 
         mDogImageView = (ImageView) findViewById(R.id.dog_image_view);
         int imageID = extras.getInt(IMAGE_BUNDLE_ID);
-        mDogImageView.setImageResource(imageID);
+        Picasso.with(getBaseContext())
+                .load(imageID)
+                .into(mDogImageView);
+
 
         mDogNameText = (TextView) findViewById(R.id.dog_image_text);
         String name = extras.getString(NAME_BUNDLE_ID);
