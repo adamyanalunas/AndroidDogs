@@ -37,9 +37,12 @@ public class Dog {
     };
 
     private int[] mThumbIds = {
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7
+            R.drawable.dog_1, R.drawable.dog_2,
+            R.drawable.dog_3, R.drawable.dog_4,
+            R.drawable.dog_5, R.drawable.dog_6,
+            R.drawable.dog_7, R.drawable.dog_8,
+            R.drawable.dog_9, R.drawable.dog_10,
+            R.drawable.dog_11, R.drawable.dog_12,
+            R.drawable.dog_13, R.drawable.dog_14
     };
 }
