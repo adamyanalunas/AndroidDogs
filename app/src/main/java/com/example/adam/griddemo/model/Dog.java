@@ -8,8 +8,9 @@ import java.util.Random;
  * Created by adam on 11/13/15.
  */
 public class Dog {
-    private int mPictureID;
     private String mName;
+    private int mPictureID;
+    private Boolean mSeen = false;
 
     public Dog() {
         mPictureID = randomThumbID();
@@ -18,6 +19,9 @@ public class Dog {
 
     public String getName() { return mName; }
     public int getPictureID() { return mPictureID; }
+
+    public Boolean getSeen() { return mSeen; }
+    public void setSeen(Boolean hasSeen) { mSeen = hasSeen; }
 
     public String randomName() {
         Random r = new Random();

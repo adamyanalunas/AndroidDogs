@@ -1,7 +1,6 @@
 package com.example.adam.griddemo;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +53,7 @@ public class ImageAdapter extends BaseAdapter {
 
         picture = (ImageView) v.getTag(R.id.picture);
         name = (TextView) v.getTag(R.id.text);
+        TextView seen = (TextView) v.findViewById(R.id.seen);
 
         Dog dog = getItem(position);
         Picasso.with(mContext)
@@ -62,6 +62,14 @@ public class ImageAdapter extends BaseAdapter {
                 .centerCrop()
                 .into(picture);
         name.setText(dog.getName());
+
+        if (dog.getSeen()) {
+            seen.setVisibility(View.VISIBLE);
+            seen.setText(new String(Character.toChars(0x1F436)));
+        } else {
+            seen.setVisibility(View.INVISIBLE);
+        }
+        seen.setVisibility(dog.getSeen() ? View.VISIBLE : View.INVISIBLE);
 
         return v;
     }

@@ -23,4 +23,13 @@
         android:textColor="@android:color/white"
         android:background="#55000000"/>
 
+    <TextView
+        android:id="@+id/seen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:visibility="invisible"
+        android:paddingBottom="15dp"
+        android:paddingRight="10dp" />
+
 </FrameLayout>
